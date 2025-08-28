@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Torrent Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎬 Torrent Player</h1>
+  <input id="magnet" placeholder="Paste Magnet Link" />
+  <button onclick="loadFiles()">Load Files</button>
+
+  <div id="file-list"></div>
+
+  <video id="player" controls autoplay width="720"></video>
+
+  <script src="player.js"></script>
+</body>
+</html>
