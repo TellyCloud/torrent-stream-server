@@ -1,21 +1,26 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: #eee;
-  text-align: center;
+body{
+  background:#0b0b0b;
+  color:#eee;
+  font-family: Inter, Roboto, Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+  padding:20px;
 }
-input {
-  width: 60%;
-  padding: 10px;
-  margin: 10px;
+.container{
+  max-width:1000px;
+  width:100%;
+  text-align:center;
 }
-button {
-  padding: 10px 20px;
+.row{ margin: 12px 0; }
+input#magnet{
+  width:72%;
+  padding:10px;
+  border-radius:6px;
+  border:1px solid #333;
+  background:#111;
+  color:#ddd;
 }
-#file-list {
-  margin-top: 20px;
-}
-video {
-  margin-top: 20px;
-  border: 2px solid #444;
-}
+button{ padding:10px 14px; margin-left:8px; border-radius:6px; cursor:pointer; }
+.file-list{ margin-top:16px; display:flex; flex-direction:column; gap:8px; align-items:center; }
+.file-btn{ width:90%; text-align:left; padding:8px 12px; background:#1b1b1b; border:1px solid #333; color:#ddd; border-radius:6px; cursor:pointer; }
+video{ margin-top:18px; border:1px solid #222; background:#000; }
