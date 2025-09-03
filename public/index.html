@@ -1,26 +1,30 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Torrent Player (demo)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <title>WebTorrent Player</title>
+  <script type="module">
+    import WebTorrent from "https://esm.sh/webtorrent"
+
+    const client = new WebTorrent()
+    const magnetURI = "magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel"
+
+    client.add(magnetURI, torrent => {
+      console.log("Client is downloading:", torrent.infoHash)
+
+      // Pick first MP4 file
+      const file = torrent.files.find(f => f.name.endsWith(".mp4"))
+
+      // Stream into a video tag
+      file.renderTo("video#player", {
+        autoplay: true,
+        controls: true
+      })
+    })
+  </script>
 </head>
 <body>
-  <div class="container">
-    <h1>🎬 Torrent Player (demo)</h1>
-
-    <div class="row">
-      <input id="magnet" placeholder="Paste magnet link / infohash / .torrent URL" />
-      <button id="loadBtn">Load files</button>
-      <button id="getTokenBtn" style="display:none">Get token</button>
-    </div>
-
-    <div id="fileList" class="file-list"></div>
-
-    <video id="player" controls width="800" style="max-width:95%"></video>
-  </div>
-
-  <script src="player.js"></script>
+  <h1>WebTorrent Player</h1>
+  <video id="player" controls autoplay style="width:80%; max-width:800px;"></video>
 </body>
 </html>
