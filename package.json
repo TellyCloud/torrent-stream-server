@@ -1,7 +1,7 @@
 {
   "name": "torrent-stream-server",
   "version": "1.0.0",
-  "description": "Express server to stream torrent files via HTTP",
+  "description": "Express server to stream torrent files via HTTP (WebTorrent)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -13,9 +13,13 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
     "mime-types": "^2.1.35",
+    "parse-torrent": "^9.0.0",
     "webtorrent": "^1.8.7"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
