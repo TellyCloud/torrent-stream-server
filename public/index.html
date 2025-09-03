@@ -1,18 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Torrent Player</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>Torrent Player (demo)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🎬 Torrent Player</h1>
-  <input id="magnet" placeholder="Paste Magnet Link" />
-  <button onclick="loadFiles()">Load Files</button>
+  <div class="container">
+    <h1>🎬 Torrent Player (demo)</h1>
 
-  <div id="file-list"></div>
+    <div class="row">
+      <input id="magnet" placeholder="Paste magnet link / infohash / .torrent URL" />
+      <button id="loadBtn">Load files</button>
+      <button id="getTokenBtn" style="display:none">Get token</button>
+    </div>
 
-  <video id="player" controls autoplay width="720"></video>
+    <div id="fileList" class="file-list"></div>
+
+    <video id="player" controls width="800" style="max-width:95%"></video>
+  </div>
 
   <script src="player.js"></script>
 </body>
